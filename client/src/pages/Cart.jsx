@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import MaxWrap from "../components/MaxWrap";
 import { Minus, Plus } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const [cartItems, setCartItems] = useState([]);
@@ -28,7 +29,7 @@ export default function Cart() {
         const newQuantity = item.quantity + value;
         return {
           ...item,
-          quantity: newQuantity > 0 ? newQuantity : 1, 
+          quantity: newQuantity > 0 ? newQuantity : 1,
         };
       }
       return item;
@@ -87,7 +88,13 @@ export default function Cart() {
             ))}
 
             <div className="text-right mt-4">
-            <button className="w-full h-full text-center bg-blue-300 py-2 ">Check Out</button>
+              <Link to="/Checkout">
+                {" "}
+                <button className="w-1/5 h-full text-center bg-blue-300 py-2 rounded-lg">
+                  Check Out
+                </button>
+              </Link>
+
               <h2 className="text-xl font-semibold">
                 Total Price: ${getTotalPrice().toFixed(2)}
               </h2>

@@ -16,7 +16,7 @@ export default function Navbar() {
           </div>
           <div className="flex space-x-5">
             <Search className="w-5 h-5" />
-            <User className="w-5 h-5" />
+            <NavLink to="/register"><User className="w-5 h-5" /></NavLink>
             <NavLink to="/cart">
               {" "}
               <ShoppingBag className="w-5 h-5" />

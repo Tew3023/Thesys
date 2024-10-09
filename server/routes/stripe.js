@@ -34,7 +34,8 @@ router.post('/checkout', async (req, res) => {
     });
 
     const orderData = {
-      fullname: information.name, 
+      fullname: information.name,
+      userId: information.userId,
       address: information.address, 
       order_id: orderId,
       session_id: session.id,
@@ -48,7 +49,7 @@ router.post('/checkout', async (req, res) => {
     res.json({
       product,
       information,
-      order: orderData,
+      sessionId : session.id
     });
   } catch (error) {
     console.error('Error creating Stripe session:', error);
