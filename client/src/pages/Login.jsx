@@ -60,7 +60,7 @@ export default function Login() {
             name="password"
             onChange={handlechange}
           />
-          <button onClick={loginProcess} className="w-full py-2 bg-blue-500 text-white rounded-lg mt-5">
+          <button onClick={loginProcess} className="w-full py-2 bg-black text-white rounded-lg mt-5">
             Login
           </button>
         </div>

@@ -29,17 +29,18 @@ router.post('/checkout', async (req, res) => {
         },
       ],
       mode: 'payment',
-      success_url: `http://localhost:8888/success.html?id=${orderId}`,
-      cancel_url: `http://localhost:8888/cancel.html?id=${orderId}`,
+      success_url: `http://localhost:3000/success?id=${orderId}`,
+      cancel_url: `http://localhost:3000/cancel?id=${orderId}`,
     });
 
     const orderData = {
       fullname: information.name,
       userId: information.userId,
-      address: information.address, 
+      address: information.address,
       order_id: orderId,
       session_id: session.id,
       status: session.status,
+      price: product.price
     };
 
     await orderSchema.create(orderData); 

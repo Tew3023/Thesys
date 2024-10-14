@@ -59,13 +59,13 @@ export default function Register() {
           />
           <button
             onClick={handleRegister}
-            className="w-full py-2 bg-red-500 text-white rounded-lg mt-5"
+            className="w-full py-2 bg-black text-white rounded-lg mt-5"
           >
             Register
           </button>
           <Link to="/login">
             {" "}
-            <button className="w-full py-2 bg-blue-500 text-white rounded-lg mt-5">
+            <button className="w-full py-2 bg-white text-black rounded-lg mt-5 b-black border-2">
               Login
             </button>
           </Link>
